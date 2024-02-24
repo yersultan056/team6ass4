@@ -22,7 +22,7 @@ public class UserService implements UserServiceInterface {
 
     @Override
     public User getById(int id) {
-        return null;
+        return repo.findById(id).orElse(null);
     }
 
     @Override
