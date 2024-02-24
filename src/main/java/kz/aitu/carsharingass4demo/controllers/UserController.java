@@ -46,4 +46,9 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
+
+    @GetMapping("/surname/{user_surname}")
+    public List<User> getAllBySurname(@PathVariable("user_surname") String surname){
+        return service.getBySurname(surname);
+    }
 }

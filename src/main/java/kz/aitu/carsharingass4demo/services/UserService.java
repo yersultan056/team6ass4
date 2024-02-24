@@ -32,6 +32,6 @@ public class UserService implements UserServiceInterface {
 
     @Override
     public List<User> getBySurname(String surname) {
-        return null;
+        return repo.findBySurname(surname);
     }
 }
