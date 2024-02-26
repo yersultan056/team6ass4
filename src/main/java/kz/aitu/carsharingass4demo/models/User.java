@@ -3,6 +3,8 @@ package kz.aitu.carsharingass4demo.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+
 @Data
 @Entity
 @Table(name = "users")
@@ -13,5 +15,7 @@ public class User {
     private String name;
     private String surname;
     private boolean gender;
+    private ArrayList<Integer> owns_cars= new ArrayList<>();
+    private ArrayList<Integer> ordered_cars = new ArrayList<>();
 
 }

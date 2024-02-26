@@ -51,4 +51,6 @@ public class UserController {
     public List<User> getAllBySurname(@PathVariable("user_surname") String surname){
         return service.getBySurname(surname);
     }
+
+
 }
