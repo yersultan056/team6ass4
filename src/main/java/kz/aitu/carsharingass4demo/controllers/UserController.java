@@ -1,10 +1,7 @@
 package kz.aitu.carsharingass4demo.controllers;
 
 import kz.aitu.carsharingass4demo.services.Interfaces.UserServiceInterface;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import kz.aitu.carsharingass4demo.models.User;
@@ -52,5 +49,9 @@ public class UserController {
         return service.getBySurname(surname);
     }
 
+    @DeleteMapping("/{id}/delete")
+    public void deleteById(@PathVariable Integer id) {
+        service.deleteById(id);
+    }
 
 }

@@ -1,14 +1,15 @@
 package kz.aitu.carsharingass4demo.services;
 
+import jakarta.transaction.Transactional;
 import kz.aitu.carsharingass4demo.models.Car;
 import kz.aitu.carsharingass4demo.repositories.CarRepositoryInterface;
 import kz.aitu.carsharingass4demo.services.Interfaces.CarServiceInterface;
 import org.springframework.stereotype.Service;
-import org.springframework.beans.BeanUtils;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class CarService implements CarServiceInterface {
     private final CarRepositoryInterface repo;
 
@@ -36,19 +37,10 @@ public class CarService implements CarServiceInterface {
         return repo.findByBrand(brand);
     }
 
-
-    @Override
-    public Car update(int id, Car car) {
-        Car existingCar = repo.findById(id).orElse(null);
-        if (existingCar != null) {
-            BeanUtils.copyProperties(car, existingCar, "id");
-            return repo.save(existingCar);
-        }
-        return null;
-    }
-
-    @Override
-    public void delete(int id) {
+    public String deleteById(int id){
         repo.deleteById(id);
+        return "Car " + " deleted";
     }
+
+
 }

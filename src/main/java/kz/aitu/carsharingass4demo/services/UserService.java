@@ -34,4 +34,9 @@ public class UserService implements UserServiceInterface {
     public List<User> getBySurname(String surname) {
         return repo.findBySurname(surname);
     }
+
+    @Override
+    public void deleteById(int id) {
+        repo.deleteById(id);
+    }
 }

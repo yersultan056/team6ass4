@@ -9,4 +9,6 @@ public interface UserServiceInterface {
     User getById(int id);
     User create(User user);
     List<User> getBySurname(String surname);
+
+    void deleteById(int id);
 }
