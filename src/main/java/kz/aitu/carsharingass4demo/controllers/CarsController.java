@@ -51,6 +51,20 @@ public class CarsController {
         return service.getByBrand(brand);
     }
 
+    @PutMapping("/{car_id}")
+    public ResponseEntity<Car> update(@PathVariable("car_id") int id, @RequestBody Car car) {
+        Car updatedCar = service.update(id, car);
+        if (updatedCar == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(updatedCar, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{car_id}")
+    public ResponseEntity<?> delete(@PathVariable("car_id") int id) {
+        service.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 
 
 }
