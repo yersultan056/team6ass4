@@ -58,4 +58,24 @@ public class BookingController {
         Cars car = new Cars();
         return service.getByCar(car);
     }
+
+@DeleteMapping("/{booking_id}")
+public ResponseEntity<Void> deleteBooking(@PathVariable("booking_id") int id) {
+    if (service.deleteBooking(id)) {
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    } else {
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+}
+    @PutMapping("/{booking_id}")
+    public ResponseEntity<Booking> updateBooking(@PathVariable("booking_id") int id,
+                                                 @RequestBody Booking updatedBooking) {
+        Booking booking = service.getById(id);
+        if (booking == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        updatedBooking.setId(id); // Устанавливаем id обновляемого бронирования
+        Booking updated = service.updateBooking(updatedBooking);
+        return new ResponseEntity<>(updated, HttpStatus.OK);
+    }
 }

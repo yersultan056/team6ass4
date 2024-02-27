@@ -47,4 +47,19 @@ public class BookingService implements BookingInterface {
     public List<Booking> getByCar(Cars car) {
         return repo.findByCar(car);
     }
+    @Override
+    public boolean deleteBooking(int id) {
+        if (repo.existsById(id)) {
+            repo.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+    @Override
+    public Booking updateBooking(Booking booking) {
+        if (booking.getId() == 0) {
+            throw new IllegalArgumentException("Invalid booking id");
+        }
+        return repo.save(booking);
+    }
 }
