@@ -46,18 +46,6 @@ public class CarService implements CarServiceInterface {
     }
 
     @Override
-    public Cars updateCar(int car_id, Cars updatedCar) {
-        return repo.findById(car_id).map(car-> {
-            car.setModel(updatedCar.getModel());
-            car.setBrand(updatedCar.getBrand());
-            car.setCarClass(updatedCar.getCarClass());
-            car.setOrderId(updatedCar.getOrderId());
-            car.setOwnerId(updatedCar.getOwnerId());
-            return repo.save(car);
-        }).orElse(null);
-    }
-
-    @Override
     public void deleteCar(int car_id) {
         repo.deleteById(car_id);
     }
