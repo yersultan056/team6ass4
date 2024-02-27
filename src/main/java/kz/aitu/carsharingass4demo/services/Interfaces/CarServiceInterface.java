@@ -11,4 +11,6 @@ public interface CarServiceInterface {
     List<Cars> getByCarModel(String model);
     List<Cars> getByCarBrand(String brand);
     List<Cars> getByCarClass(String carClass);
+    Cars updateCar(int carId, Cars car);
+    void deleteCar(int carId);
 }
