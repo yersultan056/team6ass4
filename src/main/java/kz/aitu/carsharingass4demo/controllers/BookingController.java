@@ -1,7 +1,7 @@
 package kz.aitu.carsharingass4demo.controllers;
 
 import kz.aitu.carsharingass4demo.models.Booking;
-import kz.aitu.carsharingass4demo.models.Cars;
+import kz.aitu.carsharingass4demo.models.Car;
 import kz.aitu.carsharingass4demo.models.User;
 import kz.aitu.carsharingass4demo.services.Interfaces.BookingInterface;
 import org.springframework.http.HttpStatus;
@@ -40,7 +40,7 @@ public class BookingController {
                                           @RequestParam("start_date") Date startDate,
                                           @RequestParam("end_date") Date endDate) {
         User user = new User();
-        Cars car = new Cars();
+        Car car = new Car();
         Booking createdBooking = service.createBooking(user, car, startDate, endDate);
         if (createdBooking == null)
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -55,7 +55,7 @@ public class BookingController {
 
     @GetMapping("/car/{car_id}")
     public List<Booking> getByCar(@PathVariable("car_id") int carId) {
-        Cars car = new Cars();
+        Car car = new Car();
         return service.getByCar(car);
     }
 

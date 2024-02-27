@@ -1,6 +1,6 @@
 package kz.aitu.carsharingass4demo.services;
 
-import kz.aitu.carsharingass4demo.models.Cars;
+import kz.aitu.carsharingass4demo.models.Car;
 import kz.aitu.carsharingass4demo.repositories.CarRepositoryInterface;
 import kz.aitu.carsharingass4demo.services.Interfaces.CarServiceInterface;
 import org.springframework.stereotype.Service;
@@ -16,32 +16,32 @@ public class CarService implements CarServiceInterface {
     }
 
     @Override
-    public List<Cars> getAll() {
+    public List<Car> getAll() {
         return repo.findAll();
     }
 
     @Override
-    public Cars getByCarId(int carId) {
+    public Car getByCarId(int carId) {
         return repo.findById(carId).orElse(null);
     }
 
     @Override
-    public Cars createCar(Cars car) {
+    public Car createCar(Car car) {
         return repo.save(car);
     }
 
     @Override
-    public List<Cars> getByCarModel(String model) {
+    public List<Car> getByCarModel(String model) {
         return repo.findByModel(model);
     }
 
     @Override
-    public List<Cars> getByCarBrand(String brand) {
+    public List<Car> getByCarBrand(String brand) {
         return repo.findByBrand(brand);
     }
 
     @Override
-    public List<Cars> getByCarClass(String carClass) {
+    public List<Car> getByCarClass(String carClass) {
         return repo.findByCarClass(carClass);
     }
 

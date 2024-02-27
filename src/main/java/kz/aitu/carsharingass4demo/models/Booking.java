@@ -19,7 +19,7 @@ public class Booking {
 
     @ManyToOne
     @JoinColumn(name = "car_id", referencedColumnName = "car_id")
-    private Cars car;
+    private Car car;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date startDate;

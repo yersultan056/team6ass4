@@ -15,7 +15,5 @@ public class User {
     private String name;
     private String surname;
     private boolean gender;
-    private ArrayList<Integer> owns_cars= new ArrayList<>();
-    private ArrayList<Integer> ordered_cars = new ArrayList<>();
 
 }

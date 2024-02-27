@@ -1,7 +1,7 @@
 package kz.aitu.carsharingass4demo.services;
 
 import kz.aitu.carsharingass4demo.models.Booking;
-import kz.aitu.carsharingass4demo.models.Cars;
+import kz.aitu.carsharingass4demo.models.Car;
 import kz.aitu.carsharingass4demo.models.User;
 import kz.aitu.carsharingass4demo.repositories.BookingRepositoryInterface;
 import kz.aitu.carsharingass4demo.services.Interfaces.BookingInterface;
@@ -29,7 +29,7 @@ public class BookingService implements BookingInterface {
     }
 
     @Override
-    public Booking createBooking(User user, Cars car, Date startDate, Date endDate) {
+    public Booking createBooking(User user, Car car, Date startDate, Date endDate) {
         Booking booking = new Booking();
         booking.setUser(user);
         booking.setCar(car);
@@ -44,7 +44,7 @@ public class BookingService implements BookingInterface {
     }
 
     @Override
-    public List<Booking> getByCar(Cars car) {
+    public List<Booking> getByCar(Car car) {
         return repo.findByCar(car);
     }
     @Override
