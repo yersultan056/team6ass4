@@ -6,10 +6,7 @@ import java.util.List;
 
 public interface CarServiceInterface {
     List<Car> getAll();
-    Car getByCarId(int carId);
-    Car createCar(Car car);
-    List<Car> getByCarModel(String model);
-    List<Car> getByCarBrand(String brand);
-    List<Car> getByCarClass(String carClass);
-    void deleteCar(int carId);
+    Car getById(int id);
+    Car create(Car car);
+    List<Car> getByBrand(String brand);
 }

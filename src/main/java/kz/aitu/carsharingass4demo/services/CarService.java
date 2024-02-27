@@ -21,34 +21,17 @@ public class CarService implements CarServiceInterface {
     }
 
     @Override
-    public Car getByCarId(int carId) {
-        return repo.findById(carId).orElse(null);
+    public Car getById(int id) {
+        return repo.findById(id).orElse(null);
     }
 
     @Override
-    public Car createCar(Car car) {
+    public Car create(Car car) {
         return repo.save(car);
     }
 
     @Override
-    public List<Car> getByCarModel(String model) {
-        return repo.findByModel(model);
-    }
-
-    @Override
-    public List<Car> getByCarBrand(String brand) {
+    public List<Car> getByBrand(String brand) {
         return repo.findByBrand(brand);
     }
-
-    @Override
-    public List<Car> getByCarClass(String carClass) {
-        return repo.findByCarClass(carClass);
-    }
-
-    @Override
-    public void deleteCar(int car_id) {
-        repo.deleteById(car_id);
-    }
-
-
 }
