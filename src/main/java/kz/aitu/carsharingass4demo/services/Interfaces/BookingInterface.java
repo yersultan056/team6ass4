@@ -13,4 +13,7 @@ public interface BookingInterface {
     Booking createBooking(User user, Cars car, Date startDate, Date endDate);
     List<Booking> getByUser(User user);
     List<Booking> getByCar(Cars car);
+
+    boolean deleteBooking(int id);
+    Booking updateBooking(Booking booking);
 }
