@@ -1,5 +1,6 @@
 //package kz.aitu.carsharingass4demo.models;
 //
+//
 //import jakarta.persistence.*;
 //import lombok.Data;
 //
@@ -19,13 +20,11 @@
 //
 //    @ManyToOne
 //    @JoinColumn(name = "car_id", referencedColumnName = "car_id")
-//    private Cars car;
+//    private Car car;
 //
 //    @Temporal(TemporalType.TIMESTAMP)
 //    private Date startDate;
 //
 //    @Temporal(TemporalType.TIMESTAMP)
 //    private Date endDate;
-//
-//
 //}
