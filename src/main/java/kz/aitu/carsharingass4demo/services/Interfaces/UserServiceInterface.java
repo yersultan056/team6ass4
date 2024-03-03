@@ -10,6 +10,5 @@ public interface UserServiceInterface {
     User create(User user); // Create a new user
     List<User> getBySurname(String surname); // Get all users by surname
     void deleteById(int id); // Delete a user by ID
-
 }
 

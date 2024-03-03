@@ -30,7 +30,5 @@ public class UserService implements UserServiceInterface {
     public void deleteById(int id) {
         repo.deleteById(id);
     }
-
-
 }
 
