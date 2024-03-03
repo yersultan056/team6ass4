@@ -17,4 +17,12 @@ public class Car {
     public int orderer_id; // Identifier of the orderer
     public int owner_id; // Identifier of the owner
     private long price; // Price of the car
+
+    public long getPrice() {
+        return price;
+    }
+
+    public void setPrice(long price) {
+        this.price = price;
+    }
 }
