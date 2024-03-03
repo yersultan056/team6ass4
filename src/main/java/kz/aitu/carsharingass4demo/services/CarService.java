@@ -52,28 +52,7 @@ public class CarService implements CarServiceInterface {
     }
 
     // Update a car
-    @Override
-    public Car updateCar(int id, Car car) {
-        Car existingCar = repo.findById(id).orElseThrow(() -> new RuntimeException("Car not found"));
 
-        if (car.model != null) {
-            existingCar.model = car.model;
-        }
-        if (car.brand != null) {
-            existingCar.brand = car.brand;
-        }
-        if (car.car_class != null) {
-            existingCar.car_class = car.car_class;
-        }
-        if (car.orderer_id != 0) {
-            existingCar.orderer_id = car.orderer_id;
-        }
-        if (car.owner_id != 0) {
-            existingCar.owner_id = car.owner_id;
-        }
-
-        return repo.save(existingCar);
-    }
 
     // Calculate the cost for a car for a specific period
     @Override

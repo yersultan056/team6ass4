@@ -9,20 +9,9 @@ import lombok.Data;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id; // Unique identifier of the car
-
-    public String model; // Model of the car
-    public String brand; // Brand of the car
-    public String car_class; // Class of the car
-    public int orderer_id; // Identifier of the orderer
-    public int owner_id; // Identifier of the owner
-    private long price; // Price of the car
-
-    public long getPrice() {
-        return price;
-    }
-
-    public void setPrice(long price) {
-        this.price = price;
-    }
+    private int id;
+    private String model;
+    private String brand;
+    private String car_class;
+    private int price;
 }
