@@ -2,11 +2,13 @@ package kz.aitu.carsharingass4demo.services;
 
 import jakarta.transaction.Transactional;
 import kz.aitu.carsharingass4demo.models.Car;
+import kz.aitu.carsharingass4demo.models.User;
 import kz.aitu.carsharingass4demo.repositories.CarRepositoryInterface;
 import kz.aitu.carsharingass4demo.services.Interfaces.CarServiceInterface;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @Transactional
@@ -37,9 +39,23 @@ public class CarService implements CarServiceInterface {
         return repo.findByBrand(brand);
     }
 
+    @Override
     public String deleteById(int id){
         repo.deleteById(id);
         return "Car " + " deleted";
+    }
+
+    @Override
+    public int calculateCost(int id, String period, int period_number){
+        Car car = getById(id);
+        if(Objects.equals(period, "hour")){
+            return car.getPrice() * (period_number * 60);
+        } else if (Objects.equals(period, "day")) {
+            return (car.getPrice() * 250) * period_number;
+        }else if (Objects.equals(period, "month")) {
+            return (car.getPrice() * 125) * (period_number * 30);
+        }
+        return 0;
     }
 
 

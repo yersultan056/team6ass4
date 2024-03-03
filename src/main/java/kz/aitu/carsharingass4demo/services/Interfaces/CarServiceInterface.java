@@ -10,4 +10,5 @@ public interface CarServiceInterface {
     Car create(Car car);
     List<Car> getByBrand(String brand);
     String deleteById(int id);
+    int calculateCost(int id, String period, int period_number);
 }
