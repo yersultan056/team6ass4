@@ -9,5 +9,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface UserRepositoryInterface extends JpaRepository<User, Integer> {
+    // Find all users by their surname
     List<User> findBySurname(String surname);
 }
