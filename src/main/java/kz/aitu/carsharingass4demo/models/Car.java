@@ -16,4 +16,5 @@ public class Car {
     private String car_class;
     private int orderer_id;
     private int owner_id;
+    private int price;
 }

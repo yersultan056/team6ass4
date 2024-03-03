@@ -56,14 +56,6 @@ public class CarsController {
         return service.deleteById(id);
     }
 
-    @PutMapping("/{car_id}")
-    public ResponseEntity<Car> update(@PathVariable("car_id") int id, @RequestBody Car car) {
-        Car updatedCar = service.updateCar(id, car);
-        if(updatedCar == null)
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        return new ResponseEntity<>(updatedCar, HttpStatus.OK);
-    }
-
 
 
 
