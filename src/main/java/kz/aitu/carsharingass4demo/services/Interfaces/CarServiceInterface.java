@@ -5,28 +5,14 @@ import kz.aitu.carsharingass4demo.models.Car;
 import java.util.List;
 
 public interface CarServiceInterface {
-    // Get all cars
-    List<Car> getAll();
-
-    // Get a car by its ID
-    Car getById(int id);
-
-    // Create a new car
-    Car create(Car car);
-
-    // Get all cars by their brand
-    List<Car> getByBrand(String brand);
-
-    // Delete a car by its ID
-    String deleteById(int id);
-
-    // Update a car
-    Car updateCar(int id, Car car);
-
-    // Calculate the cost of renting a car for a specific period
-    long calculateCost(int id, String period, long period_number);
-
-    // Calculate the cost of renting a car from a specific start date to an end date
-    long calculateCostFromDate(int id, String period_start, String period_end);
+    List<Car> getAll(); // Get all cars
+    Car getById(int id); // Get a car by ID
+    Car create(Car car); // Create a new car
+    List<Car> getByBrand(String brand); // Get all cars by brand
+    String deleteById(int id); // Delete a car by ID
+    Car updateCar(int id, Car car); // Update a car
+    long calculateCost(int id, String period, long period_number); // Calculate the cost for a car for a specific period
+    long calculateCostFromDate(int id, String period_start, String period_end); // Calculate the cost for a car from a specific start date to an end date
 }
+
 
