@@ -44,11 +44,23 @@ public class CarService implements CarServiceInterface {
     @Override
     public Car updateCar(int id, Car car) {
         Car existingCar = repo.findById(id).orElseThrow(() -> new RuntimeException("Car not found"));
-        existingCar.model = car.model;
-        existingCar.brand = car.brand;
-        existingCar.car_class = car.car_class;
-        existingCar.orderer_id = car.orderer_id;
-        existingCar.owner_id = car.owner_id;
+
+        if (car.model != null) {
+            existingCar.model = car.model;
+        }
+        if (car.brand != null) {
+            existingCar.brand = car.brand;
+        }
+        if (car.car_class != null) {
+            existingCar.car_class = car.car_class;
+        }
+        if (car.orderer_id != 0) {
+            existingCar.orderer_id = car.orderer_id;
+        }
+        if (car.owner_id != 0) {
+            existingCar.owner_id = car.owner_id;
+        }
+
         return repo.save(existingCar);
     }
 
