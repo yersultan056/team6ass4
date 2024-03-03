@@ -45,6 +45,14 @@ public class UserController {
         service.deleteById(id);
     }
 
+    @PutMapping("/{user_id}")
+    public ResponseEntity<User> update(@PathVariable("user_id") int id, @RequestBody User user) {
+        User updatedUser = service.updateUser(id, user);
+        if(updatedUser == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+    }
+
 
 
 }

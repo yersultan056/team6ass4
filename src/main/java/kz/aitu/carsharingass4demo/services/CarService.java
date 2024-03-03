@@ -82,5 +82,21 @@ public class CarService implements CarServiceInterface {
         }
         return 0;
     }
+    @Override
+    public Car updateCar(int id, Car car) {
+        Car existingCar = repo.findById(id).orElseThrow(() -> new RuntimeException("Car not found"));
+
+        if (existingCar.getModel() != null) {
+            existingCar.setModel(car.getModel());
+        }
+        if (car.getBrand() != null) {
+            existingCar.setBrand(car.getBrand());
+        }
+        if (car.getCar_class() != null) {
+            existingCar.setCar_class(car.getCar_class());
+        }
+
+        return repo.save(existingCar);
+    }
 }
 

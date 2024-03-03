@@ -30,5 +30,18 @@ public class UserService implements UserServiceInterface {
     public void deleteById(int id) {
         repo.deleteById(id);
     }
+
+    @Override
+    public User updateUser(int id, User user) {
+        User existingUser = repo.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (user.getName() != null) {
+            existingUser.setName(user.getName());
+        }
+        if (user.getSurname() != null) {
+            existingUser.setSurname(user.getSurname());
+        }
+        return repo.save(existingUser);
+    }
 }
 

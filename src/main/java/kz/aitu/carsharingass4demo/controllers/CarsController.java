@@ -60,6 +60,13 @@ public class CarsController {
     public String calculateCostFromDate(@PathVariable("id") int id, @PathVariable("period_start") String period_start, @PathVariable("period_end") String period_end){
         return "The cost for this car for a period from " + period_start + " to " + period_end + " is " + service.calculateCostFromDate(id, period_start, period_end);
     }
+    @PutMapping("/{car_id}")
+    public ResponseEntity<Car> update(@PathVariable("car_id") int id, @RequestBody Car car) {
+        Car updatedCar = service.updateCar(id, car);
+        if(updatedCar == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(updatedCar, HttpStatus.OK);
+    }
 
 
 }
