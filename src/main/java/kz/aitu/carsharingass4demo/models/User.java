@@ -15,10 +15,11 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    public String name;
-    public String surname;
-    public boolean gender;
-    public List<Integer> owns_cars;
-    public List<Integer> ordered_cars;
+    private int id; // Unique identifier of the user
+
+    public String name; // Name of the user
+    public String surname; // Surname of the user
+    public boolean gender; // Gender of the user (true for male, false for female)
+    public List<Integer> owns_cars; // List of IDs of cars owned by the user
+    public List<Integer> ordered_cars; // List of IDs of cars ordered by the user
 }
