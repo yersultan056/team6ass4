@@ -41,6 +41,16 @@ public class CarService implements CarServiceInterface {
         repo.deleteById(id);
         return "Car " + " deleted";
     }
+    @Override
+    public Car updateCar(int id, Car car) {
+        Car existingCar = repo.findById(id).orElseThrow(() -> new RuntimeException("Car not found"));
+        existingCar.model = car.model;
+        existingCar.brand = car.brand;
+        existingCar.car_class = car.car_class;
+        existingCar.orderer_id = car.orderer_id;
+        existingCar.owner_id = car.owner_id;
+        return repo.save(existingCar);
+    }
 
 
 }
