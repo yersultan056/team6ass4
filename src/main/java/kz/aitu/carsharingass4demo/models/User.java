@@ -16,9 +16,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private String surname;
-    private boolean gender;
-    private List<Integer> owns_cars;
-    private List<Integer> ordered_cars;
+    public String name;
+    public String surname;
+    public boolean gender;
+    public List<Integer> owns_cars;
+    public List<Integer> ordered_cars;
 }
