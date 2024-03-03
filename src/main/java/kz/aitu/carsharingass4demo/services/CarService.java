@@ -16,34 +16,42 @@ import java.util.Objects;
 public class CarService implements CarServiceInterface {
     private final CarRepositoryInterface repo;
 
+    // Constructor
     public CarService(CarRepositoryInterface repo) {
         this.repo = repo;
     }
 
+    // Get all cars
     @Override
     public List<Car> getAll() {
         return repo.findAll();
     }
 
+    // Get a car by ID
     @Override
     public Car getById(int id) {
         return repo.findById(id).orElse(null);
     }
 
+    // Create a new car
     @Override
     public Car create(Car car) {
         return repo.save(car);
     }
 
+    // Get all cars by brand
     @Override
     public List<Car> getByBrand(String brand) {
         return repo.findByBrand(brand);
     }
 
+    // Delete a car by ID
     public String deleteById(int id){
         repo.deleteById(id);
         return "Car " + " deleted";
     }
+
+    // Update a car
     @Override
     public Car updateCar(int id, Car car) {
         Car existingCar = repo.findById(id).orElseThrow(() -> new RuntimeException("Car not found"));
@@ -67,6 +75,7 @@ public class CarService implements CarServiceInterface {
         return repo.save(existingCar);
     }
 
+    // Calculate the cost for a car for a specific period
     @Override
     public long calculateCost(int id, String period, long period_number){
         Car car = getById(id);
@@ -80,6 +89,7 @@ public class CarService implements CarServiceInterface {
         return 0;
     }
 
+    // Calculate the cost for a car from a specific start date to an end date
     @Override
     public long calculateCostFromDate(int id, String period_start, String period_end){
         LocalDate date1 = LocalDate.parse(period_start);
@@ -93,8 +103,5 @@ public class CarService implements CarServiceInterface {
         }
         return 0;
     }
-
-
-
-
 }
+
