@@ -10,4 +10,5 @@ public interface CarServiceInterface {
     Car create(Car car);
     List<Car> getByBrand(String brand);
     String deleteById(int id);
+    Car updateCar(int id, Car car);
 }

@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface CarRepositoryInterface extends JpaRepository<Car, Integer> {
     List<Car> findByBrand(String brand);
+
 }

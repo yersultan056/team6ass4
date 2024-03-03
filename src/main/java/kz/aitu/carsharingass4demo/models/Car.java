@@ -11,10 +11,10 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String model;
-    private String brand;
-    private String car_class;
-    private int orderer_id;
-    private int owner_id;
+    public String model;
+    public String brand;
+    public String car_class;
+    public int orderer_id;
+    public int owner_id;
     private int price;
 }
