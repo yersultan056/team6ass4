@@ -64,6 +64,15 @@ public class CarsController {
         return new ResponseEntity<>(updatedCar, HttpStatus.OK);
     }
 
+    @GetMapping("/priceForPeriod/{id}/{period}/{period_number}")
+    public String calculateCost(@PathVariable("id") int id, @PathVariable("period") String period, @PathVariable("period_number") int period_number){
+        return "The cost for this car for a period of " + period_number + " " + period + " is " + service.calculateCost(id, period, period_number);
+    }
+
+    @GetMapping("/priceForPeriodFromTo/{id}/{period_start}/{period_end}")
+    public String calculateCostFromDate(@PathVariable("id") int id, @PathVariable("period_start") String period_start, @PathVariable("period_end") String period_end){
+        return "The cost for this car for a period from " + period_start + " to " + period_end + " is " + service.calculateCostFromDate(id, period_start, period_end);
+    }
 
 
 

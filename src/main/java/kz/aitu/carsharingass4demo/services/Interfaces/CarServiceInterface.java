@@ -11,4 +11,7 @@ public interface CarServiceInterface {
     List<Car> getByBrand(String brand);
     String deleteById(int id);
     Car updateCar(int id, Car car);
+    long calculateCost(int id, String period, long period_number);
+
+    long calculateCostFromDate(int id, String period_start, String period_end);
 }

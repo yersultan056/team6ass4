@@ -16,5 +16,5 @@ public class Car {
     public String car_class;
     public int orderer_id;
     public int owner_id;
-    private int price;
+    private long price;
 }
