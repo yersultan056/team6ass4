@@ -1,8 +1,7 @@
-package kz.aitu.carsharingass4demo.controllers;
-import kz.aitu.carsharingass4demo.models.Car;
-import kz.aitu.carsharingass4demo.services.Interfaces.CarServiceInterface;
+package kz.enu.carsharingdemo.controllers;
+import kz.enu.carsharingdemo.models.Car;
+import kz.enu.carsharingdemo.services.Interfaces.CarServiceInterface;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;

@@ -1,7 +1,7 @@
-package kz.aitu.carsharingass4demo.services;
-import kz.aitu.carsharingass4demo.models.User;
-import kz.aitu.carsharingass4demo.repositories.UserRepositoryInterface;
-import kz.aitu.carsharingass4demo.services.Interfaces.UserServiceInterface;
+package kz.enu.carsharingdemo.services;
+import kz.enu.carsharingdemo.models.User;
+import kz.enu.carsharingdemo.repositories.UserRepositoryInterface;
+import kz.enu.carsharingdemo.services.Interfaces.UserServiceInterface;
 import org.springframework.stereotype.Service;
 import java.util.List;
 @Service

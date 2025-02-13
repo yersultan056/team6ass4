@@ -1,10 +1,10 @@
-package kz.aitu.carsharingass4demo.controllers;
+package kz.enu.carsharingdemo.controllers;
 
-import kz.aitu.carsharingass4demo.services.Interfaces.UserServiceInterface;
+import kz.enu.carsharingdemo.services.Interfaces.UserServiceInterface;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import kz.aitu.carsharingass4demo.models.User;
+import kz.enu.carsharingdemo.models.User;
 import java.util.List;
 
 @RestController

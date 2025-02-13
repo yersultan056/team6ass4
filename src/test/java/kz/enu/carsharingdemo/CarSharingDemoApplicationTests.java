@@ -1,10 +1,10 @@
-package kz.aitu.carsharingass4demo;
+package kz.enu.carsharingdemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CarSharingAss4DemoApplicationTests {
+class CarSharingDemoApplicationTests {
 
     @Test
     void contextLoads() {

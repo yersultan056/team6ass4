@@ -1,9 +1,9 @@
-package kz.aitu.carsharingass4demo.services;
+package kz.enu.carsharingdemo.services;
 
 import jakarta.transaction.Transactional;
-import kz.aitu.carsharingass4demo.models.Car;
-import kz.aitu.carsharingass4demo.repositories.CarRepositoryInterface;
-import kz.aitu.carsharingass4demo.services.Interfaces.CarServiceInterface;
+import kz.enu.carsharingdemo.models.Car;
+import kz.enu.carsharingdemo.repositories.CarRepositoryInterface;
+import kz.enu.carsharingdemo.services.Interfaces.CarServiceInterface;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

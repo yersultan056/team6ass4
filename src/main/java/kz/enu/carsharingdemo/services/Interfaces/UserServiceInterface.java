@@ -1,6 +1,6 @@
-package kz.aitu.carsharingass4demo.services.Interfaces;
+package kz.enu.carsharingdemo.services.Interfaces;
 
-import kz.aitu.carsharingass4demo.models.User;
+import kz.enu.carsharingdemo.models.User;
 
 import java.util.List;
 

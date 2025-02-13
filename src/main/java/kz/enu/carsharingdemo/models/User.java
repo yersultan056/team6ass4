@@ -1,10 +1,8 @@
-package kz.aitu.carsharingass4demo.models;
+package kz.enu.carsharingdemo.models;
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
-import java.util.ArrayList;
-import java.util.List;
+
 @Data
 @Entity
 @Table(name = "users")
